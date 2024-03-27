@@ -1,0 +1,2 @@
+This is a test file to see if local repository connects to remote repository
+(I'm migrating to a different work machine)
