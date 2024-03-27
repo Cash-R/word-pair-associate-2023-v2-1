@@ -1,0 +1,23 @@
+<form class="form-match">
+  <h6>Please press ENTER after you type your word</h6>
+  <div id="input-prompt-row">
+    <label class="message">{{currentWord}} - </label>
+    <!-- <input disable-on-enter id="userInputs"  
+                (keyup.enter)="onEnter(currentWord,correctWord,userInputs.value)" -->
+    <input #userInputs disable-on-enter id="userInputs" 
+            type="text" spellcheck=true 
+            name="userInputs"
+
+            autocomplete="off"
+            (keyup)="onKeyUp($event)"
+            (click)="$event.stopPropagation()"
+            required
+            >
+  </div>
+   <span class="outputMessage" style="color: red; text-align: center;">
+    <div [innerHtml]="errorMessage"></div>
+   </span> 
+   <span class="correctMessage" style="color: blue; text-align: center;">
+    <div>{{correctMessage}}</div>
+   </span>
+</form>  
