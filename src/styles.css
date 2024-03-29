@@ -278,9 +278,19 @@ button:hover {
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
-.test-end{
+/* .test-end{
   margin-top: 30%;
+
+} */
+.test-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30%;
+  text-align: center;
 }
+
 
 /*.form-match label {
   display:inline-block;

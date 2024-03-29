@@ -50,8 +50,9 @@ export class WordAssociateComponent implements OnInit, OnDestroy {
   interval: number | undefined;
 
   ngOnInit(): void {
-
-    this.words = this.wordService.getWords(AppModule.listName);
+    const shuffledWords = this.wordService.getWords(AppModule.listName);
+    this.words = this.shuffleArray(shuffledWords);
+    // this.words = this.wordService.getWords(AppModule.listName);
     this.loadComponent();
     this.getWordsOne();
   }
@@ -92,5 +93,12 @@ export class WordAssociateComponent implements OnInit, OnDestroy {
     this.interval = window.setInterval(() => {
       this.loadComponent();
     }, 5500);// 5500 The words flash every 5.5 seconds yoannes time
+  }
+  private shuffleArray(array: any[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
 }

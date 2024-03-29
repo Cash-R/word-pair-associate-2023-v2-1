@@ -36,6 +36,7 @@ export class WordAssociateInputComponent implements OnInit{
   listOfPairs = '';
   indexArray: number[] = [];
   answerArray: string[] = [];
+  binaryArray: number[] = [];
   // wordsInputToHeaderStr () {
     
   // }
@@ -175,23 +176,26 @@ export class WordAssociateInputComponent implements OnInit{
   }
 
   //Funtion with condition for different scenarios
-  onEnter(fromDataList: string = '', correctWord: string, myuserInput: string) {
+  onEnter(fromDataList: string = '', correctWord: string, myUserInput: string) {
 
     console.log(AppModule.trainingTesting);
     
     this.inputElement!.disabled = true;
     
-    myuserInput = myuserInput.trim().toLowerCase();
-    this.answerArray[this.currentWordIndex] = myuserInput;
+    myUserInput = myUserInput.trim().toLowerCase();
+    this.answerArray[this.currentWordIndex] = myUserInput;
     
-    if (correctWord.toLowerCase() === myuserInput) {
+    //records 1s and 0s based on correctness
+    this.binaryArray[this.currentWordIndex] = (correctWord.toLowerCase() === myUserInput) ? 1 : 0;
+
+    if (correctWord.toLowerCase() === myUserInput) {
       // yoannes, checking time to print message if its evening
       if (AppModule.trainingTesting == "training") {
         this.correctMessage = "Correct answer"
       }
       this.numCorrect++;
     }
-    else /* if (myuserInput != correctWord) */ {
+    else /* if (myUserInput != correctWord) */ {
     //   // yoannes, checking time to print message if its
       if (AppModule.trainingTesting == "training") {
         this.errorMessage = "The correct word is <b>" + correctWord+"</b>"; 
@@ -266,7 +270,7 @@ export class WordAssociateInputComponent implements OnInit{
     }
   }
 
-  // FRunction that creates the .CSV file //yoannes
+  // Function that creates the .CSV file //yoannes
   createCSVFile() {
     let studyID = AppModule.globalVariable;
     let numberOfWords = this.numberOfWords;
@@ -281,7 +285,8 @@ export class WordAssociateInputComponent implements OnInit{
     questionOrder = questionOrder.replace(/,\s*$/, "");
     questionOrder  += '"';
     const data = [['Study ID', 'Number of Words', 'Number of Correct Pairs', '% of Correct Pairs', 'Training/Testing', 'Date', 'Question Order',this.listOfPairs]
-    ,[studyID, numberOfWords ,numberCorrectPairs ,percentage +"%" , AppModule.trainingTesting, current_date, questionOrder, this.answerArray]];
+    ,[studyID, numberOfWords ,numberCorrectPairs ,percentage +"%" , AppModule.trainingTesting, current_date, questionOrder, this.answerArray]
+    ,['', '', '', '', '', '', '', this.binaryArray]];
     /* Convert the data to a CSV string */
     const csvContent = data.map(row => row.join(',')).join('\n');
     /* Create a Blob object containing the CSV string */

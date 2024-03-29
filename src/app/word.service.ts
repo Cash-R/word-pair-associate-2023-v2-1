@@ -1,37 +1,18 @@
 import { Injectable } from '@angular/core';
-import { WordListComponent } from './lits1/word-list.component';
+import { WordListComponent } from './lists/word-list.component';
 import { AddWord } from './add-word';
 
-console.log("Word Service Start: ");
-
-function parseCSVList(csvPath : string) {
-  let csvList: any[] = [];
-  
-  console.log("Parsing...");
-  
-  let fs = require("fs");
-  let { parse } = require("csv-parse/sync");
-  fs.createReadStream(csvPath);
-    // .pipe(parse({ delimiter: ";", from_line: 2}))
-    // .on("data", function (row: any) {
-    //   console.log(row + "\n");
-    //   csvList.push(row);
-    // })
-    // .on ("error", function (error: any) {
-    //   console.log(error);
-    // });
-  console.log("Parsing Ended");
-}
-parseCSVList("test_csv.csv");
 
 // interface wordList {
 //   [key: string]: object
 // }
+
 @Injectable({ providedIn: 'root' })
 export class WordService {
 
   private lists :any = [];
   
+
   constructor() {
     this.lists['one'] = [
       { prompt: 'tower', answer: 'bell' },
@@ -76,49 +57,6 @@ export class WordService {
       { prompt: 'harbor', answer: 'crane' }
     ];
 
-    this.lists['devanshi'] = [
-    { prompt: 'roar', answer: 'lion' },
-    { prompt: 'bark', answer: 'dog' },
-    { prompt: 'meow', answer: 'cat' },
-    { prompt: 'moo', answer: 'cow' },
-    { prompt: 'neigh', answer: 'horse' },
-    { prompt: 'oink', answer: 'pig' },
-    { prompt: 'quack', answer: 'duck' },
-    { prompt: 'hoot', answer: 'owl' },
-    { prompt: 'chirp', answer: 'sparrow' },
-    { prompt: 'howl', answer: 'wolf' },
-    { prompt: 'buzz', answer: 'bee' },
-    { prompt: 'ribbit', answer: 'frog' },
-    { prompt: 'baa', answer: 'sheep' },
-    { prompt: 'hiss', answer: 'snake' },
-    { prompt: 'gobble', answer: 'turkey' },
-    { prompt: 'bleat', answer: 'goat' },
-    { prompt: 'caw', answer: 'crow' },
-    { prompt: 'bray', answer: 'donkey' },
-    { prompt: 'cluck', answer: 'chicken' },
-    { prompt: 'chirp', answer: 'cricket' },
-    { prompt: 'squeak', answer: 'mouse' },
-    { prompt: 'trumpet', answer: 'elephant' },
-    { prompt: 'growl', answer: 'bear' },
-    { prompt: 'moo', answer: 'bull' },
-    { prompt: 'gobble', answer: 'goose' },
-    { prompt: 'bellow', answer: 'deer' },
-    { prompt: 'squeal', answer: 'piglet' },
-    { prompt: 'purr', answer: 'kitten' },
-    { prompt: 'chatter', answer: 'squirrel' },
-    { prompt: 'whinny', answer: 'foal' },
-    { prompt: 'squawk', answer: 'parrot' },
-    { prompt: 'bleat', answer: 'lamb' },
-    { prompt: 'croak', answer: 'toad' },
-    { prompt: 'coo', answer: 'dove' },
-    { prompt: 'snort', answer: 'piggy' },
-    { prompt: 'twitter', answer: 'canary' },
-    { prompt: 'screech', answer: 'hawk' },
-    { prompt: 'hiss', answer: 'cobra' },
-    { prompt: 'cluck', answer: 'rooster' },
-    { prompt: 'ribbit', answer: 'tadpole' }
-    ];
-
     this.lists['three'] = [
       { prompt: 'fire', answer: 'smoke' },
       { prompt: 'animal', answer: 'fox' },
@@ -161,59 +99,7 @@ export class WordService {
       { prompt: 'authority', answer: 'state' },
       { prompt: 'fir', answer: 'needle' }
     ];
-
-    //
-    this.lists['cash'] = [
-      { prompt: 'A major 3rd', answer: 'Db'},
-      { prompt: 'A minor 3rd', answer: 'c'},
-      { prompt: 'Ab major 3rd', answer: 'C'},
-      { prompt: 'Ab minor 3rd', answer: 'B'},
-      { prompt: 'B major 3rd', answer: 'Eb'},
-      { prompt: 'B minor 3rd', answer: 'D'},
-      { prompt: 'Bb major 3rd', answer: 'D'},
-      { prompt: 'Bb minor 3rd', answer: 'Db'},
-      { prompt: 'C major 3rd', answer: 'E'},
-      { prompt: 'C minor 3rd', answer: 'Eb'},
-      { prompt: 'D major 3rd', answer: 'Gb'},
-      { prompt: 'D minor 3rd', answer: 'F'},
-      { prompt: 'Db major 3rd', answer: 'F'},
-      { prompt: 'Db minor 3rd', answer: 'E'},
-      { prompt: 'E major 3rd', answer: 'G'},
-      { prompt: 'E minor 3rd', answer: 'G'},
-      { prompt: 'Eb major 3rd', answer: 'G'},
-      { prompt: 'Eb minor 3rd', answer: 'Gb'},
-      { prompt: 'F major 3rd', answer: 'A'},
-      { prompt: 'F minor 3rd', answer: 'Ab'},
-      { prompt: 'G major 3rd', answer: 'B'},
-      { prompt: 'G minor 3rd', answer: 'Bb'},
-      { prompt: 'Gb major 3rd', answer: 'Bb'},
-      { prompt: 'Gb minor 3rd', answer: 'A'},
-      { prompt: 'A major 5th', answer: 'E'},
-      { prompt: 'A minor 5th', answer: 'E'},
-      { prompt: 'Ab major 5th', answer: 'Eb'},
-      { prompt: 'Ab minor 5th', answer: 'Eb'},
-      { prompt: 'B major 5th', answer: 'Gb'},
-      { prompt: 'B minor 5th', answer: 'Gb'},
-      { prompt: 'Bb major 5th', answer: 'F'},
-      { prompt: 'Bb minor 5th', answer: 'F'},
-      { prompt: 'C major 5th', answer: 'G'},
-      { prompt: 'C minor 5th', answer: 'G'},
-      { prompt: 'D major 5th', answer: 'A'},
-      { prompt: 'D minor 5th', answer: 'A'},
-      { prompt: 'Db major 5th', answer: 'Ab'},
-      { prompt: 'Db minor 5th', answer: 'Ab'},
-      { prompt: 'E major 5th', answer: 'B'},
-      { prompt: 'E minor 5th', answer: 'B'},
-      { prompt: 'Eb major 5th', answer: 'Bb'},
-      { prompt: 'Eb minor 5th', answer: 'Bb'},
-      { prompt: 'F major 5th', answer: 'C'},
-      { prompt: 'F minor 5th', answer: 'C'},
-      { prompt: 'G major 5th', answer: 'D'},
-      { prompt: 'G minor 5th', answer: 'D'},
-      { prompt: 'Gb major 5th', answer: 'Db'},
-      { prompt: 'Gb minor 5th', answer: 'Db'}
-    ];
-      
+    
     this.lists['five'] = [
       { prompt: 'power', answer: 'ruler' },
       { prompt: 'butterfly', answer: 'bloom' },
@@ -257,32 +143,92 @@ export class WordService {
       { prompt: 'garden', answer: 'flowerbed' }
     ];
 
-    // TODO: Work on csv added changes (WORK IN PROGRESS)
-    this.lists['test-csv'] = [];
-    console.log("Staring parsing:");
-    this.parseCSVList("test_csv.csv");
-    // End of changes (WORK IN PROGRESS)
-  }
-  // TODO: Pertains to working csv reading changes
-  // Decoupling this function by making a separate parse 'object'
-  parseCSVList(csvPath : string) {
-    let csvList: any[] = [];
-  
-    console.log("Parsing...");
+    this.lists['osa-one'] = [
+      { prompt: 'doll', answer: 'cradle' },
+      { prompt: 'building', answer: 'hall' },
+      { prompt: 'gale', answer: 'wind' },
+      { prompt: 'sea', answer: 'tide' },
+      { prompt: 'episode', answer: 'happiness' },
+      { prompt: 'harbor', answer: 'crane' },
+      { prompt: 'tower', answer: 'bell' },
+      { prompt: 'attack', answer: 'operation' },
+      { prompt: 'result', answer: 'effect' },
+      { prompt: 'school', answer: 'blackboard' },
+      { prompt: 'occupation', answer: 'doctor' },
+      { prompt: 'car', answer: 'headlight' },
+      { prompt: 'garden', answer: 'flowerbed' },
+      { prompt: 'gun', answer: 'bullet' },
+      { prompt: 'mother', answer: 'child' },
+      { prompt: 'coast', answer: 'beach' },
+      { prompt: 'kitchen', answer: 'pot' },
+      { prompt: 'musician', answer: 'pianist' },
+      { prompt: 'avenue', answer: 'tree' },
+      { prompt: 'group', answer: 'person' },
+      { prompt: 'girl', answer: 'admiral' },
+      { prompt: 'decency', answer: 'turn' },
+      { prompt: 'diamond', answer: 'troubles' },
+      { prompt: 'crisis', answer: 'frog' },
+      { prompt: 'railroad', answer: 'proverb' },
+      { prompt: 'insect', answer: 'painting' },
+      { prompt: 'rain', answer: 'foreman' },
+      { prompt: 'bottle', answer: 'fox' },
+      { prompt: 'cat', answer: 'bacteria' },
+      { prompt: 'blacksmith', answer: 'knuckle' },
+      { prompt: 'industry', answer: 'doubt' },
+      { prompt: 'book', answer: 'drama' },
+      { prompt: 'river', answer: 'policeman' },
+      { prompt: 'tendency', answer: 'needle' },
+      { prompt: 'bouquet', answer: 'semester' },
+      { prompt: 'countryside', answer: 'renouncement' },
+      { prompt: 'decree', answer: 'palace' },
+      { prompt: 'prison', answer: 'concept' },
+      { prompt: 'newspaper', answer: 'incident' },
+      { prompt: 'banner', answer: 'oats' }
+    ];
     
-    let fs = require("fs");
-    let { parse } = require("csv-parse/sync");
-    fs.createReadStream(csvPath)
-      .pipe(parse({ delimiter: ";", from_line: 2}))
-      .on("data", function (row: any) {
-        console.log(row);
-        csvList.push(row);
-      })
-      .on ("error", function (error: any) {
-        console.log(error);
-      });
-    console.log("Parsing Ended");
-    return csvList;
+
+    this.lists['osa-two'] = [
+      { prompt: 'plant', answer: 'leaf' },
+      { prompt: 'alliance', answer: 'betrayal' },
+      { prompt: 'trip', answer: 'map' },
+      { prompt: 'celebration', answer: 'alcohol' },
+      { prompt: 'glacier', answer: 'avalanche' },
+      { prompt: 'rider', answer: 'switch' },
+      { prompt: 'church', answer: 'heaven' },
+      { prompt: 'bird', answer: 'lark' },
+      { prompt: 'fire', answer: 'smoke' },
+      { prompt: 'friend', answer: 'loyalty' },
+      { prompt: 'authority', answer: 'state' },
+      { prompt: 'body', answer: 'blood' },
+      { prompt: 'furniture', answer: 'chair' },
+      { prompt: 'instrument', answer: 'bagpipes' },
+      { prompt: 'mission', answer: 'messenger' },
+      { prompt: 'giant', answer: 'club' },
+      { prompt: 'commercial', answer: 'candy' },
+      { prompt: 'illness', answer: 'doctor' },
+      { prompt: 'mountain', answer: 'boulder' },
+      { prompt: 'road', answer: 'car' },
+      { prompt: 'weaver', answer: 'increment' },
+      { prompt: 'grain', answer: 'emergency' },
+      { prompt: 'revolt', answer: 'soul' },
+      { prompt: 'statement', answer: 'factory' },
+      { prompt: 'army', answer: 'caterpillar' },
+      { prompt: 'rein', answer: 'metal' },
+      { prompt: 'event', answer: 'toast' },
+      { prompt: 'theory', answer: 'steam' },
+      { prompt: 'fir', answer: 'camp' },
+      { prompt: 'artist', answer: 'story' },
+      { prompt: 'infection', answer: 'flood' },
+      { prompt: 'factory', answer: 'blossom' },
+      { prompt: 'university', answer: 'hardness' },
+      { prompt: 'ruler', answer: 'engagement' },
+      { prompt: 'animal', answer: 'interview' },
+      { prompt: 'idea', answer: 'gangster' },
+      { prompt: 'joint', answer: 'truth' },
+      { prompt: 'faith', answer: 'swamp' },
+      { prompt: 'play', answer: 'ship' },
+      { prompt: 'reptile', answer: 'decision' }
+    ];    
   }
 
   getWordList(listName : any) {
@@ -297,5 +243,3 @@ export class WordService {
     return listObject;
   }
 }
-// TODO: Try printing all elem here
-console.log("Word Service End");

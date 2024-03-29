@@ -52,9 +52,3 @@ import 'zone.js'; // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
-
-// https://stackoverflow.com/questions/68707553/uncaught-referenceerror-buffer-is-not-defined
-import { Buffer } from 'buffer';
-
-// @ts-ignore
-window.Buffer = Buffer;
