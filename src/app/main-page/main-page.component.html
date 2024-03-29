@@ -2,7 +2,7 @@
   <!--img alt class="toolbal-icon" src="../image/test.png" width="200" height="80"-->
   <router-outlet></router-outlet>
   <div id="mainpage-content">
-    <h1>San Diego Verbal Paired-Associates (SD-VPA) Task, Version 2.0</h1>
+    <h1>San Diego Verbal Paired-Associates (SD-VPA) Task, Version 2.1</h1>
     <nav>
       <ul class="main-content-nav">
         <ol>
@@ -17,24 +17,34 @@
         </ol>
 
         <ol>
-          <h2><a [routerLink]="['app-message-page','three']" routerLinkActive="active">List Three</a></h2>
-        </ol>
-
-        <ol>
           <h2>
-            <a [routerLink]="['app-message-page','five']" routerLinkActive="active">List Five</a>
+            List Three:
+              <a [routerLink]="['app-message-page','three']" routerLinkActive="active">English</a> |
+              <a [routerLink]="['app-message-page','three']" routerLinkActive="active">Spanish</a>
           </h2>
         </ol>
 
         <ol>
           <h2>
-            <a [routerLink]="['app-message-page','osa-one']" routerLinkActive="active">ALZ-OSA List One</a>
+            List Five:
+              <a [routerLink]="['app-message-page','five']" routerLinkActive="active">English</a> |
+              <a [routerLink]="['app-message-page','five']" routerLinkActive="active">Spanish</a>
           </h2>
         </ol>
 
         <ol>
           <h2>
-            <a [routerLink]="['app-message-page','osa-two']" routerLinkActive="active">ALZ-OSA List Three</a>
+            ALZ-OSA List One:
+              <a [routerLink]="['app-message-page','osa-one']" routerLinkActive="active">English</a>
+              <a [routerLink]="['app-message-page','osa-one']" routerLinkActive="active">Spanish</a>
+          </h2>
+        </ol>
+
+        <ol>
+          <h2>
+            ALZ-OSA List Three
+              <a [routerLink]="['app-message-page','osa-two']" routerLinkActive="active">English</a> |
+              <a [routerLink]="['app-message-page','osa-two']" routerLinkActive="active">Spanish</a>
           </h2>
         </ol>
 
