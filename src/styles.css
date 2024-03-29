@@ -101,6 +101,11 @@ hr {
   margin-top: revert;
 }
 
+#list {
+  color:#00629b;
+  font-weight: bold;
+}
+
 #license {
   display:flex;
   gap: 1em;
