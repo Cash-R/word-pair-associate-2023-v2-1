@@ -7,7 +7,13 @@ import { MessagePageESPComponent } from './message-page-esp/message-page-esp.com
 
 import { TaskMessageComponent } from './task-message/task-message.component';
 import { TaskMessageTestingComponent } from './task-message/task-message-testing.component';
+
+import { TaskMessageTestingESPComponent } from './task-message-esp/task-message-testing-esp.component';
+
 import { WordAssociateInputComponent } from './word-input-display/word-associate-input.component';
+
+import { WordAssociateInputESPComponent } from './word-input-display-esp/word-associate-input-esp.component';
+
 import { FailTestComponent } from './fail-test.component';
 import { PassTestComponent } from './pass-test.component';
 import { WordAssociateComponent } from './lists/word-associate.component';
@@ -26,7 +32,13 @@ const routes: Routes = [
   { path: 'word-associate/:id', component: WordAssociateComponent },
   { path: 'task-message', component: TaskMessageComponent},
   { path: 'task-message-testing', component: TaskMessageTestingComponent},
+
+  { path: 'task-message-testing-esp', component: TaskMessageTestingESPComponent},
+
   { path: 'input', component: WordAssociateInputComponent},
+
+  { path: 'input-esp', component: WordAssociateInputESPComponent},
+
   { path: 'fail-test', component: FailTestComponent},
   { path: 'pass-test', component: PassTestComponent},
   { path: '404', component: PageNotFoundComponent },

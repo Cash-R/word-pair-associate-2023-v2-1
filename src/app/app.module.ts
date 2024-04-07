@@ -10,10 +10,17 @@ import { MessagePageESPComponent } from './message-page-esp/message-page-esp.com
 
 import { TaskMessageComponent } from './task-message/task-message.component';
 import { TaskMessageTestingComponent } from './task-message/task-message-testing.component';
+
+import { TaskMessageTestingESPComponent } from './task-message-esp/task-message-testing-esp.component';
+
+
 import { WordDirective } from './word.directive';
 import { WordService } from './word.service'; 
 import { MainPageComponent } from './main-page/main-page.component';
 import { WordAssociateInputComponent } from './word-input-display/word-associate-input.component';
+
+import { WordAssociateInputESPComponent } from './word-input-display-esp/word-associate-input-esp.component';
+
 import { CommonModule } from '@angular/common';
 import { DisableOnEnterDirective } from './disable-on-enter.directive';
 import { FailTestComponent } from './fail-test.component'; 
@@ -49,7 +56,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MainPageComponent,
     TaskMessageComponent,
     TaskMessageTestingComponent,
+
+    TaskMessageTestingESPComponent,
+
     WordAssociateInputComponent,
+
+    WordAssociateInputESPComponent,
+    
     DisableOnEnterDirective,
     FailTestComponent,
     PassTestComponent,
