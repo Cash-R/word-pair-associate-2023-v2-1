@@ -92,7 +92,7 @@ export class MessagePageComponent implements OnInit {
           
           //Go to the task page
           AppModule.trainingTesting = "testing";
-          this.router.navigate(['/task-message-esp']);
+          this.router.navigate(['/task-message-testing']);
         } 
       });
     }

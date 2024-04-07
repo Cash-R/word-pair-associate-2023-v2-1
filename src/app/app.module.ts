@@ -17,8 +17,8 @@ import { TaskMessageTestingESPComponent } from './task-message-esp/task-message-
 import { WordDirective } from './word.directive';
 import { WordService } from './word.service'; 
 import { MainPageComponent } from './main-page/main-page.component';
-import { WordAssociateInputComponent } from './word-input-display/word-associate-input.component';
 
+import { WordAssociateInputComponent } from './word-input-display/word-associate-input.component';
 import { WordAssociateInputESPComponent } from './word-input-display-esp/word-associate-input-esp.component';
 
 import { CommonModule } from '@angular/common';
@@ -60,7 +60,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     TaskMessageTestingESPComponent,
 
     WordAssociateInputComponent,
-
     WordAssociateInputESPComponent,
     
     DisableOnEnterDirective,
