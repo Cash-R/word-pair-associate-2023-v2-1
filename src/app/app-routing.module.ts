@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainPageComponent } from './main-page/main-page.component';
 import { MessagePageComponent } from './message-page/message-page.component';
+
+import { MessagePageESPComponent } from './message-page-esp/message-page-esp.component';
+
 import { TaskMessageComponent } from './task-message/task-message.component';
 import { TaskMessageTestingComponent } from './task-message/task-message-testing.component';
 import { WordAssociateInputComponent } from './word-input-display/word-associate-input.component';
@@ -16,6 +19,10 @@ const routes: Routes = [
   { path: '', component: MainPageComponent, pathMatch: 'full'},
   { path: 'app-message-page/:id', component: MessagePageComponent },
   { path: 'app-message-page', component: MessagePageComponent },
+
+  { path: 'app-message-page-esp/:id', component: MessagePageESPComponent },
+  { path: 'app-message-page-esp', component: MessagePageESPComponent },
+
   { path: 'word-associate/:id', component: WordAssociateComponent },
   { path: 'task-message', component: TaskMessageComponent},
   { path: 'task-message-testing', component: TaskMessageTestingComponent},

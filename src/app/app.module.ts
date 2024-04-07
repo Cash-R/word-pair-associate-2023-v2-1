@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WordAssociateComponent } from './lists/word-associate.component'; 
 import { MessagePageComponent } from './message-page/message-page.component';
+
+import { MessagePageESPComponent } from './message-page-esp/message-page-esp.component';
+
 import { TaskMessageComponent } from './task-message/task-message.component';
 import { TaskMessageTestingComponent } from './task-message/task-message-testing.component';
 import { WordDirective } from './word.directive';
@@ -39,6 +42,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppComponent, 
     WordAssociateComponent,
     MessagePageComponent,
+
+    MessagePageESPComponent,
+
     WordDirective,
     MainPageComponent,
     TaskMessageComponent,
