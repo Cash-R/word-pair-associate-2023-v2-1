@@ -146,9 +146,13 @@ export class WordAssociateInputESPComponent implements OnInit{
 
   handleTimeout(expectedCurrentWord: string) {
     const typingTimeout = 1000; // 2 seconds
-  
+    let expectedCurrentWordNoAccents = this.removeAccents(expectedCurrentWord);
+
+    console.log(expectedCurrentWord + " : " + expectedCurrentWordNoAccents + " : " + this.currentWord);
+
     // If the list has moved to the next word or an answer has been submitted, do nothing.
-    if (this.currentWord == expectedCurrentWord && this.inputElement?.disabled == false) {
+    // || this.currentWord == expectedCurrentWordNoAccents
+    if ((this.currentWord == expectedCurrentWord) && this.inputElement?.disabled == false) {
       // Check if the user is actively typing
       const isTyping = (Date.now() - this.lastTypedTime) / 1000 <= 2;
   
@@ -165,7 +169,12 @@ export class WordAssociateInputESPComponent implements OnInit{
       }
     }
   }
-  
+  removeAccents(accentedWord: string) {
+    //const listOfAccents = ['á', 'é', 'í', 'ó', 'ú', 'ü', 'ñ'];
+    //const returnWord = "";
+    //if ()
+    return accentedWord.normalize("NFD").replace(/\p{Diacritic}/gu, '');
+  }
 
   // Handle keypress events. This will enabe tracking if the user is currently typing. 
   onKeyUp(event: KeyboardEvent){
@@ -186,7 +195,7 @@ export class WordAssociateInputESPComponent implements OnInit{
     this.answerArray[this.currentWordIndex] = myUserInput;
     
     //records 1s and 0s based on correctness
-    this.binaryArray[this.currentWordIndex] = (correctWord.toLowerCase() === myUserInput) ? 1 : 0;
+    this.binaryArray[this.currentWordIndex] = (correctWord.toLowerCase() === myUserInput || this.removeAccents(correctWord) === myUserInput) ? 1 : 0;
 
     if (correctWord.toLowerCase() === myUserInput) {
       // yoannes, checking time to print message if its evening

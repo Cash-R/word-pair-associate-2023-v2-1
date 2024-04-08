@@ -11,8 +11,7 @@
               autocomplete="off"
               (keyup)="onKeyUp($event)"
               (click)="$event.stopPropagation()"
-              required
-              >
+              required>
     </div>
      <span class="outputMessage" style="color: red; text-align: center;">
       <div [innerHtml]="errorMessage"></div>

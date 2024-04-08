@@ -252,7 +252,7 @@ export class WordService {
       { prompt: 'diamante', answer: 'dureza' },
       { prompt: 'resultado', answer: 'efecto' },
       { prompt: 'ocupación', answer: 'médico' },
-      { prompt: 'historia de libro' },
+      { prompt: 'libro', answer: 'historia'},
       { prompt: 'ataque', answer: 'operación' },
       { prompt: 'gato', answer: 'alma' },
       { prompt: 'muñeca', answer: 'cuna' },
