@@ -29,6 +29,8 @@ import { PassTestComponent } from './pass-test.component';
 //yoannes , a static property needs to be created to be used as global variable
 import { Injectable } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'; 
+import { TaskMessageESPComponent } from './task-message-esp/task-message-esp.component';
+import { WordAssociateESPComponent } from './lists/word-associate-esp.component';
 
 @Injectable({ 
   providedIn: 'root'
@@ -48,6 +50,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   declarations: [
     AppComponent, 
     WordAssociateComponent,
+    WordAssociateESPComponent,
     MessagePageComponent,
 
     MessagePageESPComponent,
@@ -57,6 +60,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     TaskMessageComponent,
     TaskMessageTestingComponent,
 
+    TaskMessageESPComponent,
     TaskMessageTestingESPComponent,
 
     WordAssociateInputComponent,
