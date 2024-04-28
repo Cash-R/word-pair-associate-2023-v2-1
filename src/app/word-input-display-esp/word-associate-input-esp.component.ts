@@ -148,6 +148,7 @@ export class WordAssociateInputESPComponent implements OnInit{
     const typingTimeout = 1000; // 2 seconds
     let expectedCurrentWordNoAccents = this.removeAccents(expectedCurrentWord);
 
+    // TODO: Remove the following
     console.log(expectedCurrentWord + " : " + expectedCurrentWordNoAccents + " : " + this.currentWord);
 
     // If the list has moved to the next word or an answer has been submitted, do nothing.
@@ -187,6 +188,7 @@ export class WordAssociateInputESPComponent implements OnInit{
   //Funtion with condition for different scenarios
   onEnter(fromDataList: string = '', correctWord: string, myUserInput: string) {
 
+    // TODO: remove the following
     console.log(AppModule.trainingTesting);
     
     this.inputElement!.disabled = true;
@@ -195,19 +197,21 @@ export class WordAssociateInputESPComponent implements OnInit{
     this.answerArray[this.currentWordIndex] = myUserInput;
     
     //records 1s and 0s based on correctness
+    // TODO: Remove the following
+    console.log(correctWord.toLowerCase() + " " + this.removeAccents(correctWord));
     this.binaryArray[this.currentWordIndex] = (correctWord.toLowerCase() === myUserInput || this.removeAccents(correctWord) === myUserInput) ? 1 : 0;
 
-    if (correctWord.toLowerCase() === myUserInput) {
+    if (correctWord.toLowerCase() === myUserInput || this.removeAccents(correctWord) === myUserInput) {
       // yoannes, checking time to print message if its evening
       if (AppModule.trainingTesting == "training") {
-        this.correctMessage = "Correct answer"
+        this.correctMessage = "Respuesta correcta";
       }
       this.numCorrect++;
     }
     else /* if (myUserInput != correctWord) */ {
     //   // yoannes, checking time to print message if its
       if (AppModule.trainingTesting == "training") {
-        this.errorMessage = "The correct word is <b>" + correctWord+"</b>"; 
+        this.errorMessage = "La palabra correcta es <b>" + correctWord+"</b>"; 
       }
       this.numError++;
     }
@@ -242,18 +246,18 @@ export class WordAssociateInputESPComponent implements OnInit{
       var thisComp = this;
       Swal.fire(
         {
-          text: "You answered " + this.percentage + " % of the questions correctly. Please try again until you reach at least 60% of correctly answered questions.",
+          text: "Respondiste " + this.percentage + " % de las preguntas correctamente. Inténtalo de nuevo hasta llegar al menos al 60% de las preguntas respondidas correctamente.",
           showCancelButton: true,
-          cancelButtonText: "End Test",
+          cancelButtonText: "End Test (Finalizar prueba)",
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          confirmButtonText: 'Repeat Test',
+          confirmButtonText: 'Repeat Test (Repetir prueba)',
           allowOutsideClick: false
         }
       ).then((result) => {
         if (result.value) {
           //win.location = "input-one"
-          this.router.navigate(['/task-message']);
+          this.router.navigate(['/task-message-esp']);
           // this.router.navigate(['/input-one']);
           // this.router.navigate(['/app-lits-one']);
           this.createCSVFile();  
@@ -270,7 +274,7 @@ export class WordAssociateInputESPComponent implements OnInit{
     else if (this.numCorrect >= 24) { 
       Swal.fire(
         {
-          text: "You answered " + this.percentage + " % out of "+this.numberOfWords+" words, Test completed"
+          text: "Respondiste " + this.percentage + " % de "+this.numberOfWords+" palabras, prueba completada"
         }
       ).then( () => {
         this.router.navigate(['/pass-test']);
