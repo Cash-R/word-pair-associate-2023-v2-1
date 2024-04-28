@@ -33,7 +33,7 @@ export class MessagePageESPComponent implements OnInit {
 
   @HostListener('window:keyup.space',['$event'])
   navigateOnSpacebar(event: KeyboardEvent) {
-    this.router.navigate(['word-associate',this.listName]);
+    this.router.navigate(['word-associate-esp',this.listName]);
   }
   
   
