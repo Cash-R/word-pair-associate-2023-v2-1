@@ -230,7 +230,7 @@ export class WordAssociateInputESPComponent implements OnInit{
 
         if(AppModule.trainingTesting == "testing"){
           this.createCSVFile();  
-          this.router.navigate(['/pass-test']);
+          this.router.navigate(['/pass-test-esp']);
         } else {
           this.popSweetAlert(fromDataList);
         }
@@ -246,12 +246,12 @@ export class WordAssociateInputESPComponent implements OnInit{
       var thisComp = this;
       Swal.fire(
         {
-          text: "Respondiste " + this.percentage + " % de las preguntas correctamente. Inténtalo de nuevo hasta llegar al menos al 60% de las preguntas respondidas correctamente.",
+          text: "Respondió " + this.percentage + " % de las preguntas correctamente. Inténtelo de nuevo hasta llegar al menos al 60% de las preguntas respondidas correctamente.",
           showCancelButton: true,
-          cancelButtonText: "End Test (Finalizar prueba)",
+          cancelButtonText: "Finalizar Prueba (End Test)",
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          confirmButtonText: 'Repeat Test (Repetir prueba)',
+          confirmButtonText: 'Repetir Prueba (Repeat Test)',
           allowOutsideClick: false
         }
       ).then((result) => {
@@ -266,7 +266,7 @@ export class WordAssociateInputESPComponent implements OnInit{
           this.createCSVFile();  
             
           //Go to the home page
-          this.router.navigate(['/pass-test']);
+          this.router.navigate(['/pass-test-esp']);
           AppModule.globalVariable = ""
         } 
       });
@@ -274,10 +274,10 @@ export class WordAssociateInputESPComponent implements OnInit{
     else if (this.numCorrect >= 24) { 
       Swal.fire(
         {
-          text: "Respondiste " + this.percentage + " % de "+this.numberOfWords+" palabras, prueba completada"
+          text: "Respondió " + this.percentage + " % de "+this.numberOfWords+" palabras, prueba completada"
         }
       ).then( () => {
-        this.router.navigate(['/pass-test']);
+        this.router.navigate(['/pass-test-esp']);
       });
       this.createCSVFile();  
     }
