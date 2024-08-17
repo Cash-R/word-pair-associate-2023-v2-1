@@ -16,6 +16,8 @@ import { WordAssociateInputESPComponent } from './word-input-display-esp/word-as
 
 import { FailTestComponent } from './fail-test.component';
 import { PassTestComponent } from './pass-test.component';
+import { PassTestESPComponent } from './pass-test-esp.component';
+
 import { WordAssociateComponent } from './lists/word-associate.component';
 import { WordAssociateESPComponent } from './lists/word-associate-esp.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -45,6 +47,8 @@ const routes: Routes = [
 
   { path: 'fail-test', component: FailTestComponent},
   { path: 'pass-test', component: PassTestComponent},
+
+  { path: 'pass-test-esp', component: PassTestESPComponent},
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/404' } // Wildcard route for unmatched URLs
 

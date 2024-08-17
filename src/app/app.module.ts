@@ -25,6 +25,7 @@ import { CommonModule } from '@angular/common';
 import { DisableOnEnterDirective } from './disable-on-enter.directive';
 import { FailTestComponent } from './fail-test.component'; 
 import { PassTestComponent } from './pass-test.component';
+import { PassTestESPComponent } from './pass-test-esp.component';
 
 //yoannes , a static property needs to be created to be used as global variable
 import { Injectable } from '@angular/core';
@@ -69,6 +70,7 @@ import { WordAssociateESPComponent } from './lists/word-associate-esp.component'
     DisableOnEnterDirective,
     FailTestComponent,
     PassTestComponent,
+    PassTestESPComponent,
     PageNotFoundComponent
   ],
   bootstrap: [ AppComponent ]

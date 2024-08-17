@@ -270,6 +270,13 @@ export class WordAssociateInputComponent implements OnInit{
     }
   }
 
+  removeAccents(accentedWord: string) {
+    //const listOfAccents = ['á', 'é', 'í', 'ó', 'ú', 'ü', 'ñ'];
+    //const returnWord = "";
+    //if ()
+    return accentedWord.normalize("NFD").replace(/\p{Diacritic}/gu, '');
+  }
+  
   // Function that creates the .CSV file //yoannes
   createCSVFile() {
     let studyID = AppModule.globalVariable;
