@@ -381,7 +381,7 @@ export class WordService {
       { prompt: 'fantasma', answer: 'presencia' },
       { prompt: 'barril', answer: 'sótano' },
       { prompt: 'matrimonio', answer: 'compromiso' },
-      { prompt: 'oleaje', answer: 'barco de vapor' },
+      { prompt: 'oleaje', answer: 'barco' },
       { prompt: 'disciplina', answer: 'obediencia' },
       { prompt: 'pintor', answer: 'pianista' },
       { prompt: 'análisis', answer: 'resultado' },

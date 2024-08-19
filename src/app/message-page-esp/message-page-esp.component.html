@@ -1,10 +1,17 @@
 <div class="message-format" [hidden]="hideMessage">
-    <p lang="es">Se le presentará una lista de pares de palabras, un par a la vez.<br>
-        Piense y recuerde las palabras como pares e intente memorizar tantos pares de palabras como sea posible.<br>
-        No se requiere respuesta en esta primera parte del experimento.<br>
-    </p>
-    <!-- <p><strong>Press the SPACE bar to continue</strong></p> -->
-    <nav>
-        <a class="continue_btn" [routerLink]="['/word-associate-esp',listName]">Presione la barra SPACE (ESPACIADORA) para continuar</a>   
-    </nav>
+  <p lang="es">
+    Se le presentará una lista de pares de palabras, un par a la vez.
+    <br/>
+    Piense y recuerde las palabras como pares e intente memorizar tantos pares de palabras como sea posible.<br/>
+    No se requiere respuesta en esta primera parte del experimento.
+    <br/>
+    
+    <!-- <br/>
+    Después de su respuesta, la computadora le dirá si su respuesta fue correcta o incorrecta.<br/>
+    Si su respuesta fue incorrecta, la computadora le dará la respuesta correcta. -->
+  </p>
+  <!-- <p><strong>Press the SPACE bar to continue</strong></p> -->
+  <nav>
+    <a class="continue_btn" [routerLink]="['/word-associate-esp',listName]">Presione la barra SPACE (ESPACIADORA) para continuar</a>   
+  </nav>
 </div>
