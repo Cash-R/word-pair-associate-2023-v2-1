@@ -297,7 +297,7 @@ export class WordAssociateInputESPComponent implements OnInit{
     });
     questionOrder = questionOrder.replace(/,\s*$/, "");
     questionOrder  += '"';
-    const data = [['Study ID', 'Number of Words', 'Number of Correct Pairs', '% of Correct Pairs', 'Training/Testing', 'Date', 'Question Order',this.listOfPairs]
+    const data = [['Study ID', 'Number of Words', 'Number of Correct Pairs', '% of Correct Pairs', 'Training/Testing V2.1', 'Date', 'Question Order',this.listOfPairs]
     ,[studyID, numberOfWords ,numberCorrectPairs ,percentage +"%" , AppModule.trainingTesting, current_date, questionOrder, this.answerArray]
     ,['', '', '', '', '', '', '', this.binaryArray]];
     /* Convert the data to a CSV string */
